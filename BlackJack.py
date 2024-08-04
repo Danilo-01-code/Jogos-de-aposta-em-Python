@@ -4,14 +4,23 @@ from time import sleep
 from titulo import *
 import sys
 
+
 cash = 500 
 def main(cash):
     escrevagrande("BLACKJACK")
     print(f'Você possui {cash} R$')
-    aposta = float(input('Quanto deseja apostar ? '))
-    #TODO
-    cash -= aposta
-    #TODO
+    while True:
+        try:
+            aposta = float(input('Quanto deseja apostar ? '))
+            if aposta > cash or aposta <= 0:
+                print('Aposta Inválida')
+                continue
+            cash -= aposta
+            c = str(input(f'Sua aposta foi de {aposta}R$, pressione qualquer botão para começar o BLACKJACK: '))
+            game(cash, aposta)
+            break
+        except ValueError:
+            print('Entrada Inválida')
 
 
 def sortearcartas():
@@ -34,7 +43,7 @@ def Ásverification(som):
     else:
         return som
     
-def game(cash):
+def game(cash, aposta):
     Ás = False
     Ás_dealer = False
     mao_dealer = []
@@ -74,6 +83,9 @@ def game(cash):
     print('')
     print(f'Valor da carta do dealer {somdealer - mao_dealer[1][1]}')
     sleep(0.5)
+    if som == 21:
+        print('Você fez BLACKJACK!')
+        dealer(mao_dealer, somdealer, Ás_dealer, cash, aposta)
     c = str(input('Pressione qualquer botão para continuar'))
     choice(mao_jogador, mao_dealer,som, somdealer, Ás, Ás_dealer)
     
@@ -83,7 +95,8 @@ def choice(mao_jogador, mao_dealer,som, somdealer, Ás, Ás_dealer):
     print(
          """
          [0] HIT
-         [1] STAND     
+         [1] STAND   
+         [2] DOUBLE DOWN  
          """
      )
     while True:
@@ -91,36 +104,46 @@ def choice(mao_jogador, mao_dealer,som, somdealer, Ás, Ás_dealer):
             escolha = int(input('Sua escolha: '))
             if escolha == 0:
                 player(mao_jogador)
-            if escolha == 1:
+            elif escolha == 1:
                 sleep(0.5)
                 print(f'Você permanece com a mão: {mao_jogador}')
                 sleep(0.5)
                 print(f'E com o valor: {som}')
                 sleep(0.5)
+            elif escolha == 2:
+                player(mao_jogador)
+            else:
+                print('Valor Inválido.')
         except ValueError:
             print('Valor Inválido')
-            continue
-    dealer(mao_dealer, somdealer, Ás_dealer)
+    if som > 21:
+        virarcartas(somdealer, som, cash, aposta)
+    dealer(mao_dealer, somdealer, Ás_dealer, cash, aposta)
 
 
-def dealer(mao_dealer, somdealer, Ás_dealer):
-    #TODO
+def dealer(mao_dealer, somdealer, Ás_dealer, cash, aposta):
+    #I.A do Dealer
+    print('')
+    print('Turno do Dealer')
+    print('')
 
 
 def virarcartas(somdealer, som, cash, aposta):
-    print(f'O jogador fez {som} e o dealerfez {somdealer}')
-    print('')
+    if som <= 21:
+        print(f'O jogador fez {som} e o dealerfez {somdealer}')
+        print('')
     sleep(0.5)
-    if somdealer == 21 and som == 21:
+    elif somdealer == 21 and som == 21:
         print('O jogo Empatou!')
         cash+=aposta
-    elif som = 21:
+    elif som == 21:
         cash = cash + (aposta * 2)
         print('O jogador Venceu !')
 
-    elif somdealer = 21:
+    elif somdealer == 21:
         print('O Jogador Perdeu!')
-
+    else:
+        print('Você excedeu 21, e perdeu imediatamente.')
     sleep(0.5)
     print('')
     print(f'Dinheiro atual: {cash}')
@@ -142,7 +165,8 @@ def virarcartas(somdealer, som, cash, aposta):
                     print('Entrada Inválida')
             except ValueError:
                 print('Entrada Inválida.')
-        
+
+       
 
 
 
