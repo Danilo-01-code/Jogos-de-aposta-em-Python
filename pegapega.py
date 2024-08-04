@@ -19,10 +19,8 @@ def main(record):
                 return gameover(pontos, record)
             else:
                 print('Digite [S/N] ')
-                continue
         except ValueError:
             print('Entrada Inválida')
-            continue
         
 
 
@@ -50,12 +48,10 @@ def game(munição, hp, pontos, record):
             escolha = int(input("Sua escolha: "))
             if escolha > 3 or escolha < 0:
                 print('Valor Inválido')
-                continue
             death(escolha, rng, pontos, record, munição, hp)
             break
         except ValueError:
             print('Valor inválido')
-            continue
             
 
 
@@ -160,10 +156,8 @@ def gamewin(pontos, record, munição):
                 break
             else:
                 print('Digite [S/N] ')
-                continue
         except ValueError:
             print('Entrada Inválida')
-            continue
     
 
 def errou(munição,hp, pontos, record):
@@ -183,10 +177,9 @@ def errou(munição,hp, pontos, record):
                 return gameover(pontos, record)
             else:
                 print('Digite [S/N] ')
-                continue
         except ValueError:
             print('Entrada Inválida')
-            continue
+
     game(munição,hp, pontos, record)
 
 def gameover(pontos, record):
@@ -208,10 +201,8 @@ def gameover(pontos, record):
                 break
             else:
                 print('Digite [S/N] ')
-                continue
         except ValueError:
             print('Entrada Inválida')
-            continue
 
 def recordgame(pontos,record):
     if pontos > record:
