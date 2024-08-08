@@ -162,6 +162,7 @@ def choice(mao_jogador, mao_dealer,som, somdealer, Ás, Ás_dealer, Valor_dealer
 def dealer(mao_jogador, mao_dealer,som, somdealer, Ás, Ás_dealer, Valor_dealer, Valor_jogador):
     global passe
     #I.A do Dealer
+    #Lembre-se de arrumar isso algum dia
     print(f'\nTurno do Dealer\n')
     rng = random.randint(0, 100)
     if somdealer >=19:
