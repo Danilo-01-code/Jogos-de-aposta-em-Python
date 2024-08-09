@@ -34,3 +34,8 @@ def escrevagrande(txt):
     print('-'*40)
 
 
+def escrevaunderline(txt):
+    esc = len(txt)+4
+    print('-'* esc)
+    print(f'  {cores["underline"]}{txt}{cores["limpa"]}  ')
+    print('-'*esc)
