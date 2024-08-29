@@ -122,7 +122,8 @@ def game():
     global participantes
 
     minimo = 1
-
+    game0 = True
+    game1 = True
 
     if quantidade == 0:
         print(f"\nO jogador foi eliminado!\n")
@@ -137,12 +138,18 @@ def game():
         sys.exit()
 
     if bot1.quantidade == 0:
-        print(f"\nO bot1 foi eliminado!\n")
+        if game0:
+            print(f"\nO bot1 foi eliminado!\n")
+            game0 = False
+
         participantes.clear()
         participantes = ["jogador", "bot2"]
         
     if bot2.quantidade == 0:
-        print(f"\nO bot2 foi eliminado!\n")
+        if game1:
+            print(f"\nO bot2 foi eliminado!\n")
+            game1 = False
+
         participantes.clear()
         participantes = ["jogador", "bot1"]
     
