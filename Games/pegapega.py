@@ -1,5 +1,5 @@
 from random import randint
-from zcores import cores
+from Games.zcores import cores
 import sys
 
 record = 0

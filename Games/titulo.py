@@ -1,4 +1,4 @@
-from zcores import cores
+from Games.zcores import cores
 
 
 def escreva(txt):

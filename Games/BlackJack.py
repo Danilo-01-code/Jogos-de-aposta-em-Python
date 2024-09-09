@@ -1,7 +1,7 @@
-from cartas import *
+from Games.cartas import *
 import random
 from time import sleep
-from titulo import *
+from Games.titulo import *
 import sys
 
 

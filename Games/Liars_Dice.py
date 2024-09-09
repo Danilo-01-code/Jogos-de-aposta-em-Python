@@ -1,6 +1,6 @@
 from random import randint, shuffle
-from titulo import *
-from zcores import *
+from Games.titulo import *
+from Games.zcores import *
 from time import sleep
 from collections import Counter
 import sys

@@ -1,6 +1,6 @@
-from zcores import cores
+from Games.zcores import cores
 import sys
-from termowords import palavras
+from Games.termowords import palavras
 from random import randint
 
 class Termo:

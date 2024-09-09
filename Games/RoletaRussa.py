@@ -1,6 +1,6 @@
 from random import randint
-from titulo import escrevavermelho
-from AsciiDraws import caveirudo
+from Games.titulo import escrevavermelho
+from Games.AsciiDraws import caveirudo
 from time import sleep
 import sys
 
