@@ -14,4 +14,4 @@ Estratégias de Aposta: Implementações de diferentes estratégias de aposta pa
 Jogar contra o bot: Alguns jogos oferecem a opção de jogar contra o computador.
 Interface Intuitiva: Interface baseada em texto que guia o jogador através das regras e opções disponíveis em cada jogo.
 
-Obs(O projeto ainda está muito no inicio, ainda irei implementar mais coisas.)
+

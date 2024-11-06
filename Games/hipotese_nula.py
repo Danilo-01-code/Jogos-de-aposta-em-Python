@@ -82,4 +82,5 @@ def res(statistic_t,p_value, array):
     again(array)
 
 
-main()
+if __name__ == "__main__":
+    main()

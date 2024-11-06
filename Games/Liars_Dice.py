@@ -394,6 +394,5 @@ def proxplayer():
     participantes.append(primeiro_item)
     
 
-
-
-main()
+if __name__ == "__main__":
+    main()

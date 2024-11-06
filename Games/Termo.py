@@ -69,4 +69,5 @@ def main():
         termo1.palavra(res)
         termo1.win()
 
-main()
+if __name__ == "__main__":
+    main()

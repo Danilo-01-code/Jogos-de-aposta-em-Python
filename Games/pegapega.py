@@ -213,4 +213,5 @@ def recordgame(pontos,record):
     return record
 
 
-main(record)
+if __name__ == "__main__":
+    main(record)
